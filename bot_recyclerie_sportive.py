@@ -173,10 +173,12 @@ html, body, [data-testid="stAppViewContainer"] {
 # ─────────────────────────────────────────────
 # 2. CLÉ API
 # ─────────────────────────────────────────────
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+# Cherche d'abord dans st.secrets (Streamlit Cloud), puis dans l'environnement local
+GOOGLE_API_KEY = st.secrets.get("GOOGLE_API_KEY") or os.getenv("GOOGLE_API_KEY")
+
 if not GOOGLE_API_KEY:
     st.error(
-        "Clé API non trouvée ! Définis GOOGLE_API_KEY dans ton environnement."
+        "Clé API non trouvée ! Ajoutez GOOGLE_API_KEY dans les Secrets de Streamlit Cloud."
     )
     st.stop()
 
