@@ -165,10 +165,6 @@ html, body, [data-testid="stAppViewContainer"] {
     border-color: #2E7D32 !important;
     color: #2E7D32 !important;
 }
-</style>
-""",
-    unsafe_allow_html=True,
-)
 /* ── Force la couleur du texte des messages (Lisibilité Mobile / Dark Mode) ── */
 [data-testid="stChatMessage"] {
     color: #1A1A1A !important;
@@ -180,6 +176,11 @@ html, body, [data-testid="stAppViewContainer"] {
 [data-testid="stChatMessage"] div {
     color: #1A1A1A !important;
 }
+</style>
+""",
+    unsafe_allow_html=True,
+)
+
 # ─────────────────────────────────────────────
 # 2. CLÉ API
 # ─────────────────────────────────────────────
